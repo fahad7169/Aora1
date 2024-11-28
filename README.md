@@ -1,50 +1,132 @@
-# Welcome to your Expo app 👋
+# Social Video App  
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+An intuitive social video app built with Expo React Native. The app allows users to sign in, sign out, sign up, view profiles, upload videos, like, comment, save videos, and perform seamless searches. 
 
-## Get started
+## Table of Contents  
+- [Screenshots](#screenshots)  
+- [Features](#features)  
+- [Setup](#setup)  
+- [Usage](#usage)  
+- [Technology Used](#technology-used)  
+- [Author](#author)  
 
-1. Install dependencies
+# Screenshots
+Home Screen	
+![home](images/IMG-20241128-WA0008.jpg)
 
-   ```bash
-   npm install
-   ```
+Upload Video	
+![Upload](images/IMG-20241128-WA0002.jpg)
 
-2. Start the app
+Profile Management	
+![Profile](images/IMG-20241128-WA0004.jpg)
 
-   ```bash
-    npx expo start
-   ```
+Saved Videos
+![Saved Videos](images/IMG-20241128-WA0003.jpg)
 
-In the output, you'll find options to open the app in a
+Comments
+![comments](images/IMG-20241128-WA0006.jpg)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-## Get a fresh project
+---
 
-When you're ready, run:
+## Features  
+- **Authentication**: Sign in, sign up, and sign out functionality.  
+- **Profile Management**: View and edit your profile with ease.  
+- **Video Sharing**: Upload, like, comment, and save videos.  
+- **Search**: Search through uploaded and saved videos seamlessly.  
+- **Intuitive Design**: A user-friendly interface for a great experience.  
 
-```bash
-npm run reset-project
+---
+
+## Setup  
+
+### Step 1: Install Prerequisites  
+Ensure you have the following installed on your system:  
+- **Node.js**: [Download here](https://nodejs.org/)  
+- **Expo CLI**: Install using `npm install -g expo-cli`  
+- **Appwrite**(https://appwrite.io/): For backend services  
+
+### Step 2: Clone the Repository  
+Clone this repository and navigate to the project directory:  
+```bash  
+git clone https://github.com/fahad7169/Aora1.git  
+cd Aora1
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Step 3: Set Up Environment Variables
+1: Create a ```.env``` file in the root directory.
 
-## Learn more
+2: Add your Appwrite API keys to the file:Create same as .env.example
 
-To learn more about developing your project with Expo, look at the following resources:
+### Step 4: Set Up Appwrite Database
+1: Log in to [Appwrite](https://appwrite.io/) and create a new project.
+2: Create a database with the following collections and attributes:
+#### Collections:
+1: **savedVideos**
+* ```videoId``` (Relationship with ```videos``` collection; many-to-one)
+* ```userId``` (Relationship with ```users``` collection; many-to-one)
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+2: **comments**
 
-## Join the community
+* ```title``` (String)
+* ```videoId``` (Relationship with ```videos``` collection; many-to-one)
+* ```userId``` (Relationship with ```users``` collection; many-to-one)
 
-Join our community of developers creating universal apps.
+3: **likes**
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+* ```videoId``` (String)
+* ```userId``` (String)
+
+4: **videos**
+
+* ```title``` (String)
+* ```thumbnail``` (URL)
+* ```prompt``` (String)
+* ```video``` (URL)
+* ```creator``` (Relationship with users collection; many-to-one)
+
+5: **users**
+
+* ```username``` (String)
+* ```email``` (Email)
+* ```avatar``` (URL)
+* ```accountId``` (String)
+
+
+### Step 5: Install Dependencies
+Install all required dependencies:
+
+```bash
+npm install
+```
+  
+### Step 6: Start the App
+Run the app using Expo:
+
+```bash
+npx expo start
+```
+
+## Usage
+1: Launch the app on an emulator or real device.
+2: Sign in or sign up to create an account.
+3: Explore the app's features:
+* Upload videos with thumbnails and prompts.
+* Like, comment on, and save videos.
+* Seamlessly search through all or saved videos.
+
+
+
+## Technology Used
+This app was built using the following libraries:
+
+* (React native)[https://reactnative.dev/]
+* (Expo)[https://docs.expo.dev/tutorial/create-your-first-app/]
+* (Appwrite)[https://appwrite.io/]
+
+## Author
+This project was developed by Fahad. Contributions, suggestions, and feedback are welcome!
+
+
+

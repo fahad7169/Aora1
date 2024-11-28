@@ -45,7 +45,7 @@ Comments
 Ensure you have the following installed on your system:  
 - **Node.js**: [Download here](https://nodejs.org/)  
 - **Expo CLI**: Install using `npm install -g expo-cli`  
-- **Appwrite**(https://appwrite.io/): For backend services  
+- [Appwrite](https://appwrite.io/): For backend services  
 
 ### Step 2: Clone the Repository  
 Clone this repository and navigate to the project directory:  
@@ -57,10 +57,11 @@ cd Aora1
 ### Step 3: Set Up Environment Variables
 1: Create a ```.env``` file in the root directory.
 
-2: Add your Appwrite API keys to the file:Create same as .env.example
+2: Add your Appwrite API keys to the file: Create same as .env.example
 
 ### Step 4: Set Up Appwrite Database
 1: Log in to [Appwrite](https://appwrite.io/) and create a new project.
+
 2: Create a database with the following collections and attributes:
 #### Collections:
 1: **savedVideos**
@@ -110,7 +111,9 @@ npx expo start
 
 ## Usage
 1: Launch the app on an emulator or real device.
+
 2: Sign in or sign up to create an account.
+
 3: Explore the app's features:
 * Upload videos with thumbnails and prompts.
 * Like, comment on, and save videos.

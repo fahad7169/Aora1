@@ -121,9 +121,9 @@ npx expo start
 ## Technology Used
 This app was built using the following libraries:
 
-* (React native)[https://reactnative.dev/]
-* (Expo)[https://docs.expo.dev/tutorial/create-your-first-app/]
-* (Appwrite)[https://appwrite.io/]
+* [React native](https://reactnative.dev/)
+* [Expo](https://docs.expo.dev/tutorial/create-your-first-app/)
+* [Appwrite](https://appwrite.io/)
 
 ## Author
 This project was developed by Fahad. Contributions, suggestions, and feedback are welcome!
